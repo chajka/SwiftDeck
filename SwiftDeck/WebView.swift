@@ -21,6 +21,10 @@ class WebViewModel: ObservableObject {
 }// end class WebViewModel
 
 struct WebView: NSViewRepresentable {
+    public typealias NSViewType = WKWebView
+    @ObservedObject var viewModel: WebViewModel
+    private let webView: WKWebView = WKWebView()
+
     class Coordinator: NSObject, WKNavigationDelegate {
         private var viewModel: WebViewModel
 
