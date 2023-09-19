@@ -20,3 +20,5 @@ class WebViewModel: ObservableObject {
     }// end init
 }// end class WebViewModel
 
+struct WebView: NSViewRepresentable {
+}
