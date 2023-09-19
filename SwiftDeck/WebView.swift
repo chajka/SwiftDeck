@@ -5,4 +5,6 @@
 //  Created by Чайка on 2023/09/19.
 //
 
-import Foundation
+import SwiftUI
+import WebKit
+import Combine
