@@ -61,7 +61,6 @@ struct WebView: NSViewRepresentable {
 
         public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             decisionHandler(.allow)
-        }
-
-    }
-}
+        }// end webView (webView:navigationAction:decisionHandler:)
+    }// end class Coordinator
+}// end struct WebView
