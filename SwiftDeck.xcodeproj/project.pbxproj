@@ -14,6 +14,7 @@
 		C6DAD85D2AB99B1A0079737B /* SwiftDeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD85C2AB99B1A0079737B /* SwiftDeckTests.swift */; };
 		C6DAD8672AB99B1A0079737B /* SwiftDeckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8662AB99B1A0079737B /* SwiftDeckUITests.swift */; };
 		C6DAD8692AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8682AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift */; };
+		C6DAD8762AB99DB30079737B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8752AB99DB30079737B /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C6DAD8622AB99B1A0079737B /* SwiftDeckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDeckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DAD8662AB99B1A0079737B /* SwiftDeckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeckUITests.swift; sourceTree = "<group>"; };
 		C6DAD8682AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeckUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6DAD8752AB99DB30079737B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C6DAD84A2AB99B190079737B /* SwiftDeckApp.swift */,
+				C6DAD8752AB99DB30079737B /* WebView.swift */,
 				C6DAD84C2AB99B190079737B /* ContentView.swift */,
 				C6DAD84E2AB99B1A0079737B /* Assets.xcassets */,
 				C6DAD8532AB99B1A0079737B /* SwiftDeck.entitlements */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DAD8762AB99DB30079737B /* WebView.swift in Sources */,
 				C6DAD84D2AB99B190079737B /* ContentView.swift in Sources */,
 				C6DAD84B2AB99B190079737B /* SwiftDeckApp.swift in Sources */,
 			);
