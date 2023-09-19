@@ -32,6 +32,8 @@ struct WebView: NSViewRepresentable {
         return webView
     }// end makeNSView
 
+    public func updateNSView (_ nsView: WKWebView, context: NSViewRepresentableContext<WebView>) { }
+
     class Coordinator: NSObject, WKNavigationDelegate {
         private var viewModel: WebViewModel
 
