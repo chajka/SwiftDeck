@@ -27,7 +27,7 @@ struct WebView: NSViewRepresentable {
 
     public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
         webView.navigationDelegate = context.coordinator
-        webView.uiDelegate = context.coordinator as? WKUIDelegate
+        webView.uiDelegate = context.coordinator
         webView.load(URLRequest(url: URL(string: viewModel.link)!))
         return webView
     }// end makeNSView
