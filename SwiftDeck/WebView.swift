@@ -38,7 +38,7 @@ struct WebView: NSViewRepresentable {
         return Coordinator(viewModel)
     }// end makeCoordinator
 
-    class Coordinator: NSObject, WKNavigationDelegate {
+    class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
         private var viewModel: WebViewModel
 
         init(_ viewModel: WebViewModel) {
