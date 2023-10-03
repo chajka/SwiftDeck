@@ -27,7 +27,7 @@ struct WebView: NSViewRepresentable {
 
     public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
         webView.navigationDelegate = context.coordinator
-        webView.uiDelegate = context.coordinator as? WKUIDelegate
+        webView.uiDelegate = context.coordinator
         webView.load(URLRequest(url: URL(string: viewModel.link)!))
         return webView
     }// end makeNSView
@@ -38,7 +38,7 @@ struct WebView: NSViewRepresentable {
         return Coordinator(viewModel)
     }// end makeCoordinator
 
-    class Coordinator: NSObject, WKNavigationDelegate {
+    class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
         private var viewModel: WebViewModel
 
         init(_ viewModel: WebViewModel) {
@@ -62,5 +62,18 @@ struct WebView: NSViewRepresentable {
         public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             decisionHandler(.allow)
         }// end webView (webView:navigationAction:decisionHandler:)
-    }// end class Coordinator
+
+        public func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+            let openPanel = NSOpenPanel()
+            openPanel.canChooseFiles = true
+            openPanel.begin { (result) in
+                if result == NSApplication.ModalResponse.OK {
+                    if let url = openPanel.url {
+                        completionHandler([url])
+                    }
+                } else if result == NSApplication.ModalResponse.cancel {
+                    completionHandler(nil)
+                }
+            }
+        }    }// end class Coordinator
 }// end struct WebView
