@@ -66,6 +66,7 @@ struct WebView: NSViewRepresentable {
         public func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
             let openPanel = NSOpenPanel()
 			openPanel.prompt = String(localized: "Upload")
+			openPanel.message = String(localized: "title")
             openPanel.canChooseFiles = true
             openPanel.begin { (result) in
                 if result == NSApplication.ModalResponse.OK {
