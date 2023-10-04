@@ -15,6 +15,7 @@
 		C6DAD8672AB99B1A0079737B /* SwiftDeckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8662AB99B1A0079737B /* SwiftDeckUITests.swift */; };
 		C6DAD8692AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8682AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift */; };
 		C6DAD8762AB99DB30079737B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD8752AB99DB30079737B /* WebView.swift */; };
+		C6DE5E5C2ACD195D0096AF4B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C6DE5E5B2ACD195D0096AF4B /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C6DAD8662AB99B1A0079737B /* SwiftDeckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeckUITests.swift; sourceTree = "<group>"; };
 		C6DAD8682AB99B1A0079737B /* SwiftDeckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C6DAD8752AB99DB30079737B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		C6DE5E5B2ACD195D0096AF4B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				C6DAD8752AB99DB30079737B /* WebView.swift */,
 				C6DAD84C2AB99B190079737B /* ContentView.swift */,
 				C6DAD84E2AB99B1A0079737B /* Assets.xcassets */,
+				C6DE5E5B2ACD195D0096AF4B /* Localizable.xcstrings */,
 				C6DAD8532AB99B1A0079737B /* SwiftDeck.entitlements */,
 				C6DAD8502AB99B1A0079737B /* Preview Content */,
 			);
@@ -238,6 +241,7 @@
 			files = (
 				C6DAD8522AB99B1A0079737B /* Preview Assets.xcassets in Resources */,
 				C6DAD84F2AB99B1A0079737B /* Assets.xcassets in Resources */,
+				C6DE5E5C2ACD195D0096AF4B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +433,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDeck/Preview Content\"";
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -441,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -460,7 +464,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDeck/Preview Content\"";
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -472,7 +476,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
