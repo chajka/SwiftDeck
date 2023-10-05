@@ -76,14 +76,10 @@ struct WebView: NSViewRepresentable {
 			openPanel.prompt = String(localized: "Upload")
 			openPanel.message = String(localized: "title")
             openPanel.canChooseFiles = true
-            openPanel.begin { (result) in
-                if result == NSApplication.ModalResponse.OK {
-                    if let url = openPanel.url {
-                        completionHandler([url])
-                    }
-                } else if result == NSApplication.ModalResponse.cancel {
-                    completionHandler(nil)
-                }
-            }
+			if let window = webView.window {
+				openPanel.beginSheetModal(for: window, completionHandler: handleResult)
+			} else { // web view is somehow not in a window? Fall back to begin
+				openPanel.begin(completionHandler: handleResult)
+			}
         }    }// end class Coordinator
 }// end struct WebView
