@@ -10,33 +10,33 @@ import WebKit
 import Combine
 
 class WebViewModel: ObservableObject {
-    @Published var link: String
-    @Published var didFinishLoading: Bool = false
-    @Published var pageTitle: String
+	@Published var link: String
+	@Published var didFinishLoading: Bool = false
+	@Published var pageTitle: String
 
-    init (link: String, didFinishLoading: Bool = false, pageTitle: String = "") {
-        self.link = link
-        self.pageTitle = ""
-    }// end init
+	init (link: String, didFinishLoading: Bool = false, pageTitle: String = "") {
+		self.link = link
+		self.pageTitle = ""
+	}// end init
 }// end class WebViewModel
 
 struct WebView: NSViewRepresentable {
-    public typealias NSViewType = WKWebView
-    @ObservedObject var viewModel: WebViewModel
-    private let webView: WKWebView = WKWebView()
+	public typealias NSViewType = WKWebView
+	@ObservedObject var viewModel: WebViewModel
+	private let webView: WKWebView = WKWebView()
 
-    public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
-        webView.navigationDelegate = context.coordinator
-        webView.uiDelegate = context.coordinator
-        webView.load(URLRequest(url: URL(string: viewModel.link)!))
-        return webView
-    }// end makeNSView
+	public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
+		webView.navigationDelegate = context.coordinator
+		webView.uiDelegate = context.coordinator
+		webView.load(URLRequest(url: URL(string: viewModel.link)!))
+		return webView
+	}// end makeNSView
 
-    public func updateNSView (_ nsView: WKWebView, context: NSViewRepresentableContext<WebView>) { }
+	public func updateNSView (_ nsView: WKWebView, context: NSViewRepresentableContext<WebView>) { }
 
-    public func makeCoordinator () -> Coordinator {
-        return Coordinator(viewModel)
-    }// end makeCoordinator
+	public func makeCoordinator () -> Coordinator {
+		return Coordinator(viewModel)
+	}// end makeCoordinator
 
 	class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
 		private var viewModel: WebViewModel
