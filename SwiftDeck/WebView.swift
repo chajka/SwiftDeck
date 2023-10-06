@@ -44,33 +44,33 @@ struct WebView: NSViewRepresentable {
 		init(_ viewModel: WebViewModel) {
 			//Initialise the WebViewModel
 			self.viewModel = viewModel
-		}
+		}// end init
 		
-		public func webView(_: WKWebView, didFail: WKNavigation!, withError: Error) { }
+		public func webView (_: WKWebView, didFail: WKNavigation!, withError: Error) { }
 		
-		public func webView(_: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError: Error) { }
+		public func webView (_: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError: Error) { }
 		
 		//After the webpage is loaded, assign the data in WebViewModel class
 		public func webView(_ web: WKWebView, didFinish: WKNavigation!) {
 			self.viewModel.pageTitle = web.title!
 			self.viewModel.link = web.url?.absoluteString ?? "http://google.com"
 			self.viewModel.didFinishLoading = true
-		}
+		}// end func webView(_ web:, didFinish:)
 		
-		public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) { }
+		public func webView (_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) { }
 		
-		public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+		public func webView (_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 			decisionHandler(.allow)
 		}// end webView (webView:navigationAction:decisionHandler:)
 		
-		public func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
-			func handleResult(_ result: NSApplication.ModalResponse) {
+		public func webView (_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+			func handleResult (_ result: NSApplication.ModalResponse) {
 				if result == NSApplication.ModalResponse.OK, let url = openPanel.url {
 					completionHandler([url])
 				} else {
 					completionHandler(nil)
-				}
-			}
+				}// end if response
+			}// end handleResult
 			
 			let openPanel = NSOpenPanel()
 			openPanel.prompt = String(localized: "Upload")
@@ -80,7 +80,7 @@ struct WebView: NSViewRepresentable {
 				openPanel.beginSheetModal(for: window, completionHandler: handleResult)
 			} else { // web view is somehow not in a window? Fall back to begin
 				openPanel.begin(completionHandler: handleResult)
-			}
-		}
+			}// end if webView have window
+		}// end func webView (_:, runOpenPanelWith, initiatedByFrame, completionHandler:)
 	}// end class Coordinator
 }// end struct WebView
