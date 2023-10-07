@@ -82,5 +82,15 @@ struct WebView: NSViewRepresentable {
 				openPanel.begin(completionHandler: handleResult)
 			}// end if webView have window
 		}// end func webView (_:, runOpenPanelWith, initiatedByFrame, completionHandler:)
+
+		public func webView (_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+			if navigationAction.targetFrame == nil {
+				if let url: URL = navigationAction.request.url {
+					NSWorkspace.shared.open(url)
+				}// end if url link
+			}// end if navigation targetframe is nil
+
+			return nil
+		}// end func webView (_:, createWebViewWith:, for:, windowFeatures:)
 	}// end class Coordinator
 }// end struct WebView
