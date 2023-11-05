@@ -94,3 +94,7 @@ struct WebView: NSViewRepresentable {
 		}// end func webView (_:, createWebViewWith:, for:, windowFeatures:)
 	}// end class Coordinator
 }// end struct WebView
+
+#Preview {
+	WebView(viewModel: WebViewModel(link: "www.apple.com"))
+}
