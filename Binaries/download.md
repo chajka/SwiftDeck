@@ -2,4 +2,4 @@
 
 ## Version 0.3.6.0
 
-[download dmg](./Binaries/SwiftDeck030600.dmg)
+[download dmg](./Build007/SwiftDeck030600.dmg)
