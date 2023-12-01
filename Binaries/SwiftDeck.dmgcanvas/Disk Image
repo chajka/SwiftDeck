@@ -1,0 +1,53 @@
+{
+  "diskImage" : {
+    "autoopen" : true,
+    "background" : {
+      "color" : "{1.000000, 1.000000, 1.000000, 1.000000}",
+      "layoutObjects" : [
+
+      ],
+      "type" : 1
+    },
+    "codeSigningIdentityString" : "A655D0DBE5FB0FE055BE0608CEC840B898A05945",
+    "iconPreviewVisible" : false,
+    "iconSize" : 128,
+    "itemInfoVisible" : false,
+    "labelPosition" : 0,
+    "licenses" : [
+
+    ],
+    "nameFontSize" : 12,
+    "statusBarVisible" : false,
+    "suggestedDiskImageName" : "Disk Image.dmg",
+    "toolbarVisible" : false,
+    "uid" : "jrltbhwsoc",
+    "validationScheme" : 1,
+    "viewLayout" : 0,
+    "volumeName" : "SwiftDeck030607",
+    "volumeSize" : 0,
+    "volumeSizeOption" : "Automatic",
+    "windowContentHeight" : 360,
+    "windowContents" : [
+      {
+        "filePath" : "\/Applications",
+        "iconSize" : 100,
+        "invisible" : false,
+        "isAnAlias" : true,
+        "location" : "{475, 187}",
+        "relativeFilePath" : "..\/..\/..\/..\/..\/Applications"
+      },
+      {
+        "filePath" : "\/Volumes\/Sharkwire\/build\/SwiftDeck 2023-12-01 18-51-41\/SwiftDeck.app",
+        "iconSize" : 100,
+        "invisible" : false,
+        "isAnAlias" : false,
+        "location" : "{142, 180}",
+        "relativeFilePath" : "..\/..\/SwiftDeck 2023-12-01 18-51-41\/SwiftDeck.app"
+      }
+    ],
+    "windowContentWidth" : 600,
+    "windowLeft" : 200,
+    "windowTop" : 120
+  },
+  "version" : 4
+}
