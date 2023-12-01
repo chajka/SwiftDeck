@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C64B07E62B19E0C7001C4CCB /* icon_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07DC2B19E0C7001C4CCB /* icon_128x128.png */; };
+		C64B07E72B19E0C7001C4CCB /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07DD2B19E0C7001C4CCB /* icon_16x16.png */; };
+		C64B07E82B19E0C7001C4CCB /* icon_16x16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07DE2B19E0C7001C4CCB /* icon_16x16@2x.png */; };
+		C64B07E92B19E0C7001C4CCB /* icon_256x256@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07DF2B19E0C7001C4CCB /* icon_256x256@2x.png */; };
+		C64B07EA2B19E0C7001C4CCB /* icon_512x512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E02B19E0C7001C4CCB /* icon_512x512@2x.png */; };
+		C64B07EB2B19E0C7001C4CCB /* icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E12B19E0C7001C4CCB /* icon_256x256.png */; };
+		C64B07EC2B19E0C7001C4CCB /* icon_32x32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E22B19E0C7001C4CCB /* icon_32x32@2x.png */; };
+		C64B07ED2B19E0C7001C4CCB /*  icon_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E32B19E0C7001C4CCB /*  icon_32x32.png */; };
+		C64B07EE2B19E0C7001C4CCB /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E42B19E0C7001C4CCB /* icon_512x512.png */; };
+		C64B07EF2B19E0C7001C4CCB /* icon_128x128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64B07E52B19E0C7001C4CCB /* icon_128x128@2x.png */; };
 		C6DAD84B2AB99B190079737B /* SwiftDeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD84A2AB99B190079737B /* SwiftDeckApp.swift */; };
 		C6DAD84D2AB99B190079737B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DAD84C2AB99B190079737B /* ContentView.swift */; };
 		C6DAD84F2AB99B1A0079737B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6DAD84E2AB99B1A0079737B /* Assets.xcassets */; };
@@ -36,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C64B07DC2B19E0C7001C4CCB /* icon_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_128x128.png; path = deck.iconset/icon_128x128.png; sourceTree = SOURCE_ROOT; };
+		C64B07DD2B19E0C7001C4CCB /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_16x16.png; path = deck.iconset/icon_16x16.png; sourceTree = SOURCE_ROOT; };
+		C64B07DE2B19E0C7001C4CCB /* icon_16x16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_16x16@2x.png"; path = "deck.iconset/icon_16x16@2x.png"; sourceTree = SOURCE_ROOT; };
+		C64B07DF2B19E0C7001C4CCB /* icon_256x256@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_256x256@2x.png"; path = "deck.iconset/icon_256x256@2x.png"; sourceTree = SOURCE_ROOT; };
+		C64B07E02B19E0C7001C4CCB /* icon_512x512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_512x512@2x.png"; path = "deck.iconset/icon_512x512@2x.png"; sourceTree = SOURCE_ROOT; };
+		C64B07E12B19E0C7001C4CCB /* icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_256x256.png; path = deck.iconset/icon_256x256.png; sourceTree = SOURCE_ROOT; };
+		C64B07E22B19E0C7001C4CCB /* icon_32x32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_32x32@2x.png"; path = "deck.iconset/icon_32x32@2x.png"; sourceTree = SOURCE_ROOT; };
+		C64B07E32B19E0C7001C4CCB /*  icon_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = " icon_32x32.png"; path = "deck.iconset/ icon_32x32.png"; sourceTree = SOURCE_ROOT; };
+		C64B07E42B19E0C7001C4CCB /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512x512.png; path = deck.iconset/icon_512x512.png; sourceTree = SOURCE_ROOT; };
+		C64B07E52B19E0C7001C4CCB /* icon_128x128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_128x128@2x.png"; path = "deck.iconset/icon_128x128@2x.png"; sourceTree = SOURCE_ROOT; };
 		C6DAD8472AB99B190079737B /* SwiftDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DAD84A2AB99B190079737B /* SwiftDeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDeckApp.swift; sourceTree = "<group>"; };
 		C6DAD84C2AB99B190079737B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C64B07DB2B19E0B5001C4CCB /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				C64B07E32B19E0C7001C4CCB /*  icon_32x32.png */,
+				C64B07DD2B19E0C7001C4CCB /* icon_16x16.png */,
+				C64B07DE2B19E0C7001C4CCB /* icon_16x16@2x.png */,
+				C64B07E22B19E0C7001C4CCB /* icon_32x32@2x.png */,
+				C64B07DC2B19E0C7001C4CCB /* icon_128x128.png */,
+				C64B07E52B19E0C7001C4CCB /* icon_128x128@2x.png */,
+				C64B07DF2B19E0C7001C4CCB /* icon_256x256@2x.png */,
+				C64B07E42B19E0C7001C4CCB /* icon_512x512.png */,
+				C64B07E02B19E0C7001C4CCB /* icon_512x512@2x.png */,
+				C64B07E12B19E0C7001C4CCB /* icon_256x256.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		C6DAD83E2AB99B190079737B = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +142,7 @@
 				C6DAD84E2AB99B1A0079737B /* Assets.xcassets */,
 				C6DE5E5B2ACD195D0096AF4B /* Localizable.xcstrings */,
 				C6DAD8532AB99B1A0079737B /* SwiftDeck.entitlements */,
+				C64B07DB2B19E0B5001C4CCB /* icon */,
 				C6DAD8502AB99B1A0079737B /* Preview Content */,
 			);
 			path = SwiftDeck;
@@ -239,9 +277,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64B07EA2B19E0C7001C4CCB /* icon_512x512@2x.png in Resources */,
+				C64B07E82B19E0C7001C4CCB /* icon_16x16@2x.png in Resources */,
+				C64B07ED2B19E0C7001C4CCB /*  icon_32x32.png in Resources */,
+				C64B07EC2B19E0C7001C4CCB /* icon_32x32@2x.png in Resources */,
 				C6DAD8522AB99B1A0079737B /* Preview Assets.xcassets in Resources */,
+				C64B07E72B19E0C7001C4CCB /* icon_16x16.png in Resources */,
+				C64B07E62B19E0C7001C4CCB /* icon_128x128.png in Resources */,
 				C6DAD84F2AB99B1A0079737B /* Assets.xcassets in Resources */,
 				C6DE5E5C2ACD195D0096AF4B /* Localizable.xcstrings in Resources */,
+				C64B07E92B19E0C7001C4CCB /* icon_256x256@2x.png in Resources */,
+				C64B07EB2B19E0C7001C4CCB /* icon_256x256.png in Resources */,
+				C64B07EE2B19E0C7001C4CCB /* icon_512x512.png in Resources */,
+				C64B07EF2B19E0C7001C4CCB /* icon_128x128@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +406,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -415,7 +463,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -428,12 +476,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftDeck/SwiftDeck.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDeck/Preview Content\"";
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -445,7 +494,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -459,12 +509,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftDeck/SwiftDeck.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftDeck/Preview Content\"";
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -476,7 +527,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -494,9 +546,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeckTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeckTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -513,9 +565,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeckTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeckTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -532,7 +584,7 @@
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeckUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeckUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -549,7 +601,7 @@
 				DEVELOPMENT_TEAM = G9SC48NK42;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tv.from.chajka.SwiftDeckUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.chajka.SwiftDeckUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
