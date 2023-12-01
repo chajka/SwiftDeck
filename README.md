@@ -8,4 +8,4 @@ This is a test program for WKWebView implementation by SwiftUI
 
 ## Download
 
-[Download Page](./download.md)
+[Download Page](./Binaries/download.md)
