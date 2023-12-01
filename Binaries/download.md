@@ -2,4 +2,4 @@
 
 ## Version 0.3.6.0
 
-[download dmg](./Build007/SwiftDeck030600.dmg)
+<a href="./Build007/SwiftDeck030600.dmg">Download SwiftDeck0.3.6</a>
