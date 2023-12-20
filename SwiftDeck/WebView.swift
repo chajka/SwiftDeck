@@ -9,6 +9,8 @@ import SwiftUI
 import WebKit
 import Combine
 
+private let UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
+
 class WebViewModel: ObservableObject {
 	@Published var link: String
 	@Published var didFinishLoading: Bool = false
@@ -28,6 +30,7 @@ struct WebView: NSViewRepresentable {
 	public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
 		webView.navigationDelegate = context.coordinator
 		webView.uiDelegate = context.coordinator
+		webView.customUserAgent = UserAgent
 		webView.load(URLRequest(url: URL(string: viewModel.link)!))
 		return webView
 	}// end makeNSView
