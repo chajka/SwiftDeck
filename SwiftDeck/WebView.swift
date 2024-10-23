@@ -62,8 +62,8 @@ struct WebView: NSViewRepresentable {
 		
 		public func webView (_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) { }
 		
-			decisionHandler(.allow)
 		public func webView (_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping @MainActor @Sendable (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+			decisionHandler(.allow, preferences)
 		}// end webView (webView:navigationAction:decisionHandler:)
 		
 		public func webView (_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor @Sendable ([URL]?) -> Void) {
