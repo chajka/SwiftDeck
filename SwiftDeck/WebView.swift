@@ -66,7 +66,7 @@ struct WebView: NSViewRepresentable {
 			decisionHandler(.allow)
 		}// end webView (webView:navigationAction:decisionHandler:)
 		
-		public func webView (_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+		public func webView (_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor @Sendable ([URL]?) -> Void) {
 			func handleResult (_ result: NSApplication.ModalResponse) {
 				if result == NSApplication.ModalResponse.OK, let url = openPanel.url {
 					completionHandler([url])
