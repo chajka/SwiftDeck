@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+fileprivate let pageURLString: String = "https://pro.x.com"
+
 struct ContentView: View {
 	var body: some View {
-		BrowserView(messageURL: "https://tweetdeck.twitter.com")
+		BrowserView(messageURL: pageURLString)
 	}// end body
 }// end struct ContentView
 
