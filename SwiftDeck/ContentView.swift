@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate let pageURLString: String = "https://pro.x.com"
+fileprivate let XProPageURLString: String = "https://pro.x.com"
 
 struct ContentView: View {
 	var body: some View {
