@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-fileprivate let pageURLString: String = "https://pro.x.com"
+fileprivate let XProPageURLString: String = "https://pro.x.com"
+fileprivate let XPageURLString: String = "https://x.com"
+fileprivate let Pro: Bool = false
 
 struct ContentView: View {
 	var body: some View {
-		BrowserView(messageURL: pageURLString)
+		let XPageURL: String = Pro ? XProPageURLString : XPageURLString
+		BrowserView(messageURL: XPageURL)
 	}// end body
 }// end struct ContentView
 
