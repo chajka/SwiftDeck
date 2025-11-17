@@ -14,7 +14,7 @@ fileprivate let Pro: Bool = false
 struct ContentView: View {
 	var body: some View {
 		BrowserView(messageURL: pageURLString)
-		let XPageURLString: String = Pro ? XProPageURLString : XPageURLString
+		let XPageURL: String = Pro ? XProPageURLString : XPageURLString
 	}// end body
 }// end struct ContentView
 
