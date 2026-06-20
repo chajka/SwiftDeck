@@ -12,9 +12,24 @@ fileprivate let XPageURLString: String = "https://x.com"
 fileprivate let Pro: Bool = false
 
 struct ContentView: View {
+	@StateObject private var model: WebViewModel
+
+	init () {
+		let initialURL = Pro ? XProPageURLString : XPageURLString
+		_model = StateObject(wrappedValue: WebViewModel(link: initialURL))
+	}// end init
+
 	var body: some View {
-		let XPageURL: String = Pro ? XProPageURLString : XPageURLString
-		BrowserView(messageURL: XPageURL)
+		WebView(viewModel: model)
+			.onOpenURL { url in
+				guard url.scheme?.lowercased() == "https",
+					  let host = url.host?.lowercased(),
+					  host == "x.com" || host == "www.x.com" else {
+					return
+				}// end guard supported X URL
+
+				model.link = url.absoluteString
+			}// end onOpenURL
 	}// end body
 }// end struct ContentView
 

@@ -35,7 +35,14 @@ struct WebView: NSViewRepresentable {
 		return webView
 	}// end makeNSView
 
-	public func updateNSView (_ nsView: WKWebView, context: NSViewRepresentableContext<WebView>) { }
+	public func updateNSView (_ nsView: WKWebView, context: NSViewRepresentableContext<WebView>) {
+		guard let url = URL(string: viewModel.link),
+			  nsView.url?.absoluteString != url.absoluteString else {
+			return
+		}// end guard new URL
+
+		nsView.load(URLRequest(url: url))
+	}// end updateNSView
 
 	public func makeCoordinator () -> Coordinator {
 		return Coordinator(viewModel)
@@ -68,8 +75,8 @@ struct WebView: NSViewRepresentable {
 		
 		public func webView (_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping @MainActor @Sendable ([URL]?) -> Void) {
 			func handleResult (_ result: NSApplication.ModalResponse) {
-				if result == NSApplication.ModalResponse.OK, let url = openPanel.url {
-					completionHandler([url])
+				if result == NSApplication.ModalResponse.OK {
+					completionHandler(openPanel.urls)
 				} else {
 					completionHandler(nil)
 				}// end if response
@@ -79,6 +86,8 @@ struct WebView: NSViewRepresentable {
 			openPanel.prompt = String(localized: "Upload")
 			openPanel.message = String(localized: "title")
 			openPanel.canChooseFiles = true
+			openPanel.canChooseDirectories = parameters.allowsDirectories
+			openPanel.allowsMultipleSelection = parameters.allowsMultipleSelection
 			if let window = webView.window {
 				openPanel.beginSheetModal(for: window, completionHandler: handleResult)
 			} else { // web view is somehow not in a window? Fall back to begin
