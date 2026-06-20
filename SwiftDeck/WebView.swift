@@ -10,6 +10,37 @@ import WebKit
 import Combine
 
 private let UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
+private let ProUnavailableMessageName = "swiftDeckProUnavailable"
+private let ProUnavailableObserverScript = """
+(() => {
+	var didNotify = false;
+
+	function checkForUnavailablePage() {
+		if (didNotify || location.hostname !== "pro.x.com") {
+			return;
+		}
+
+		const text = document.body?.innerText ?? "";
+		const mentionsXPro = text.includes("X Pro");
+		const asksForUpgrade =
+			text.includes("プランをアップグレード") ||
+			text.includes("プレミアムプラスにアップグレード") ||
+			/upgrade (?:your )?plan/i.test(text) ||
+			/upgrade to (?:x )?premium\\+/i.test(text);
+
+		if (mentionsXPro && asksForUpgrade) {
+			didNotify = true;
+			window.webkit.messageHandlers.swiftDeckProUnavailable.postMessage(location.href);
+		}
+	}
+
+	checkForUnavailablePage();
+	new MutationObserver(checkForUnavailablePage).observe(
+		document.documentElement,
+		{ childList: true, subtree: true, characterData: true }
+	);
+})();
+"""
 
 class WebViewModel: ObservableObject {
 	@Published var link: String
@@ -28,6 +59,15 @@ struct WebView: NSViewRepresentable {
 	private let webView: WKWebView = WKWebView()
 
 	public func makeNSView (context: NSViewRepresentableContext<WebView>) -> WKWebView {
+		let userContentController = webView.configuration.userContentController
+		userContentController.add(context.coordinator, name: ProUnavailableMessageName)
+		userContentController.addUserScript(
+			WKUserScript(
+				source: ProUnavailableObserverScript,
+				injectionTime: .atDocumentEnd,
+				forMainFrameOnly: true
+			)
+		)
 		webView.navigationDelegate = context.coordinator
 		webView.uiDelegate = context.coordinator
 		webView.customUserAgent = UserAgent
@@ -48,7 +88,7 @@ struct WebView: NSViewRepresentable {
 		return Coordinator(viewModel)
 	}// end makeCoordinator
 
-	class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
+	class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 		private var viewModel: WebViewModel
 		
 		init(_ viewModel: WebViewModel) {
@@ -68,7 +108,18 @@ struct WebView: NSViewRepresentable {
 		}// end func webView(_ web:, didFinish:)
 		
 		public func webView (_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) { }
-		
+
+		public func userContentController (_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+			guard message.name == ProUnavailableMessageName,
+				  message.webView?.url?.host?.lowercased() == "pro.x.com",
+				  let fallbackURL = URL(string: "https://x.com") else {
+				return
+			}// end guard unavailable X Pro page
+
+			self.viewModel.link = fallbackURL.absoluteString
+			message.webView?.load(URLRequest(url: fallbackURL))
+		}// end userContentController
+
 		public func webView (_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping @MainActor @Sendable (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
 			decisionHandler(.allow, preferences)
 		}// end webView (webView:navigationAction:decisionHandler:)

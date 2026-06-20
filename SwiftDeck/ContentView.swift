@@ -9,7 +9,7 @@ import SwiftUI
 
 fileprivate let XProPageURLString: String = "https://pro.x.com"
 fileprivate let XPageURLString: String = "https://x.com"
-fileprivate let Pro: Bool = false
+fileprivate let Pro: Bool = true
 
 struct ContentView: View {
 	@StateObject private var model: WebViewModel
