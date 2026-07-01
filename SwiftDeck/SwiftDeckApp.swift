@@ -52,4 +52,16 @@ final class SwiftDeckAppDelegate: NSObject, NSApplicationDelegate {
 		}// end if handler ready
 	}// end handleGetURLEvent
 
+	private func flushPendingURLs() {
+		guard let openURLHandler,
+			  !pendingURLs.isEmpty else {
+			return
+		}// end guard pending
+
+		let urls = pendingURLs
+		pendingURLs.removeAll()
+		for url in urls {
+			openURLHandler(url)
+		}// end for pending urls
+	}// end flushPendingURLs
 }// end class SwiftDeckAppDelegate
