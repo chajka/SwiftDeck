@@ -12,11 +12,14 @@ fileprivate let XPageURLString: String = "https://x.com"
 fileprivate let Pro: Bool = true
 
 struct ContentView: View {
-	@StateObject private var model: WebViewModel
+	@ObservedObject private var model: WebViewModel
 
-	init () {
+	init (model: WebViewModel = WebViewModel(link: Pro ? XProPageURLString : XPageURLString)) {
 		let initialURL = Pro ? XProPageURLString : XPageURLString
-		_model = StateObject(wrappedValue: WebViewModel(link: initialURL))
+		self.model = model
+		if self.model.link.isEmpty {
+			self.model.link = initialURL
+		}// end if empty link
 	}// end init
 
 	var body: some View {

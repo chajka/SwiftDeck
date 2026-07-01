@@ -6,14 +6,40 @@
 //
 
 import SwiftUI
+import AppKit
 
 @main
 struct SwiftDeckApp: App {
+	@NSApplicationDelegateAdaptor(SwiftDeckAppDelegate.self)
+	private var appDelegate
+
+	@StateObject
+	private var model = WebViewModel(link: "https://pro.x.com")
+
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
-		}// end WindowGroup
+			ContentView(model: model)
+				.onAppear {
+					appDelegate.openURLHandler = openURLInExistingWindow
+				}// end onAppear
+		}
 	}// end body
+
+	@MainActor
+	private func openURLInExistingWindow(_ url: URL) {
+		guard url.scheme?.lowercased() == "https",
+			  let host = url.host?.lowercased(),
+			  host == "x.com" || host == "www.x.com" else {
+			return
+		}// end guard supported X URL
+
+		model.link = url.absoluteString
+		NSApp.activate(ignoringOtherApps: true)
+		let window =
+			NSApp.windows.first(where: \.isVisible)
+			?? NSApp.windows.first
+		window?.makeKeyAndOrderFront(nil)
+	}// end openURLInExistingWindow
 }// end struct SwiftDeckApp
 
 @MainActor
