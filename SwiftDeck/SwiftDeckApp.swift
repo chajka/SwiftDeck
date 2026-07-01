@@ -18,4 +18,12 @@ struct SwiftDeckApp: App {
 
 @MainActor
 final class SwiftDeckAppDelegate: NSObject, NSApplicationDelegate {
+	var openURLHandler: ((URL) -> Void)? {
+		didSet {
+			flushPendingURLs()
+		}// end didSet
+	}// end var openURLHandler
+
+	private var pendingURLs: [URL] = []
+
 }// end class SwiftDeckAppDelegate
