@@ -26,4 +26,13 @@ final class SwiftDeckAppDelegate: NSObject, NSApplicationDelegate {
 
 	private var pendingURLs: [URL] = []
 
+	func applicationDidFinishLaunching(_ notification: Notification) {
+		NSAppleEventManager.shared().setEventHandler(
+			self,
+			andSelector: #selector(handleGetURLEvent(_:withReplyEvent:)),
+			forEventClass: AEEventClass(kInternetEventClass),
+			andEventID: AEEventID(kAEGetURL)
+		)
+	}// end applicationDidFinishLaunching
+
 }// end class SwiftDeckAppDelegate
