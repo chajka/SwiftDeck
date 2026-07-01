@@ -35,4 +35,21 @@ final class SwiftDeckAppDelegate: NSObject, NSApplicationDelegate {
 		)
 	}// end applicationDidFinishLaunching
 
+	@objc
+	private func handleGetURLEvent(_ event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
+		guard let urlString =
+				event
+				.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?
+				.stringValue,
+			  let url = URL(string: urlString) else {
+			return
+		}// end guard url
+
+		if let openURLHandler {
+			openURLHandler(url)
+		} else {
+			pendingURLs.append(url)
+		}// end if handler ready
+	}// end handleGetURLEvent
+
 }// end class SwiftDeckAppDelegate
