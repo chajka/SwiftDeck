@@ -15,3 +15,7 @@ struct SwiftDeckApp: App {
 		}// end WindowGroup
 	}// end body
 }// end struct SwiftDeckApp
+
+@MainActor
+final class SwiftDeckAppDelegate: NSObject, NSApplicationDelegate {
+}// end class SwiftDeckAppDelegate
